@@ -8,6 +8,9 @@ Ext.define('demo.view.FlightInfomation', {
     _params: null,
     _address: global_serverAddress + "flight/search",
 	config: {
+		plugins: [
+		
+		],
 		layout: 'fit',
 		items: [{
 			xtype: 'titlebar',
@@ -25,12 +28,16 @@ Ext.define('demo.view.FlightInfomation', {
 	        }]
         }, {
             xtype: 'list',
+            loadingText: '加载中...',
+            emptyText: '没有记录',
             scrollable: {
                 direction: 'vertical'
             },
             plugins: [{
                 xclass: 'Ext.plugin.ListPaging',
-                autoPaging: true
+                autoPaging: true,
+                loadMoreText: '加载更多中...',
+                noMoreRecordsText: ' '
             }],
             cls: 'datalist-basic',
             itemTpl: '<div class="img" style="background-image: url(./icons/airplane_{action}.ico); float: left;"></div>' +

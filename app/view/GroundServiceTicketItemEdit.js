@@ -2,6 +2,7 @@ Ext.define('demo.view.GroundServiceTicketItemEdit', {
 	extend: 'Ext.Sheet',
 	xtype: 'groundServiceTicketItemEdit',
 	requires: [
+		'Ext.ux.field.DateTimePicker'
 	],
 	_action: "add",
 	config: {
@@ -22,7 +23,7 @@ Ext.define('demo.view.GroundServiceTicketItemEdit', {
 			cls: 'acms-sheet',
 			items: [{
 				xtype: 'fieldset',
-				layout: 'hbox',
+				layout: 'fit',
 				items: [{
 					xtype: 'selectfield',
 					name: 'serviceItem',
@@ -31,26 +32,65 @@ Ext.define('demo.view.GroundServiceTicketItemEdit', {
                         {text: '牵引车', value: '牵引车'},
                         {text: '加水车', value: '加水车'},
                         {text: '污水车', value: '污水车'},
+                        {text: '客梯', value: '客梯'},
                         {text: '测试项目', value: '测试项目'}
                     ]
 				}]
 			}, {
 				xtype: 'fieldset',
-				layout: 'hbox',
+				layout: 'fit',
 				items: [{
-					xtype: 'datepickerfield',
+					xtype: 'datetimepickerfield',
 					name: 'startTime',
 					label: '起始时间',
-					dateFormat: 'Y-m-d'
+					value: new Date(),
+                    dateTimeFormat : 'Y-m-d H:i',
+                    picker: {
+                    	useTitles: true,
+						yearFrom: new Date().getFullYear() - 5,
+						yearTo: new Date().getFullYear() + 5,
+                        minuteInterval : 1,
+						yearText: '年',
+						monthText: '月',
+						dayText: '日',
+						hourText: '时',
+						minuteText: '分',
+						doneButton: {
+							text: '确定'
+						},
+						cancelButton: {
+							text: '取消'
+						},
+                        slotOrder: ['year', 'month', 'day', 'hour', 'minute']
+                    }
 				}]
 			}, {
 				xtype: 'fieldset',
-				layout: 'hbox',
+				layout: 'fit',
 				items: [{
-					xtype: 'datepickerfield',
+					xtype: 'datetimepickerfield',
 					name: 'endTime',
 					label: '结束时间',
-					dateFormat: 'Y-m-d'
+					value: new Date(),
+                    dateTimeFormat : 'Y-m-d H:i',
+                    picker: {
+                    	useTitles: true,
+						yearFrom: new Date().getFullYear() - 5,
+						yearTo: new Date().getFullYear() + 5,
+                        minuteInterval : 1,
+						yearText: '年',
+						monthText: '月',
+						dayText: '日',
+						hourText: '时',
+						minuteText: '分',
+						doneButton: {
+							text: '确定'
+						},
+						cancelButton: {
+							text: '取消'
+						},
+                        slotOrder: ['year', 'month', 'day', 'hour', 'minute']
+                    }
 				}]
 			}, {
 				xtype: 'fieldset',
@@ -92,7 +132,7 @@ Ext.define('demo.view.GroundServiceTicketItemEdit', {
 				}]
 			}, {
 				xtype: 'fieldset',
-				layout: 'hbox',
+				layout: 'fit',
 				items: [{
 					xtype: 'selectfield',
 					name: 'unit',
@@ -147,13 +187,13 @@ Ext.define('demo.view.GroundServiceTicketItemEdit', {
 	},
 	setParams: function(params) {
 		var serviceItem = params.serviceItem;
-		var startTime = params.startTime;
-		var endTime = params.endTime;
+		var startTime = params.startTime != null ? Ext.Date.parse(params.startTime, 'Y-m-d H:i:s') : null;
+		var endTime = params.endTime != null ? Ext.Date.parse(params.endTime, 'Y-m-d H:i:s') : null;
 		var amount = params.amount;
 		var unit = params.unit;
 		this.down("[name=serviceItem]").setValue(serviceItem);
-		this.down("[name=startTime]").setValue(Ext.Date.parse(startTime, 'Y-m-d'));
-		this.down("[name=endTime]").setValue(Ext.Date.parse(endTime, 'Y-m-d'));
+		this.down("[name=startTime]").setValue(startTime);
+		this.down("[name=endTime]").setValue(endTime);
 		this.down("[name=amount]").setValue(amount);
 		this.down("[name=unit]").setValue(unit);
 	}

@@ -31,10 +31,19 @@ Ext.define('demo.view.FlightSearch', {
 					dateFormat: 'Y-m-d',
 					value: new Date(2011, 7, 1),
 					picker: {
-						xtype: 'datepicker',
-						useTitles: false,
+						useTitles: true,
 						yearFrom: new Date().getFullYear() - 5,
-						yearTo: new Date().getFullYear() + 5
+						yearTo: new Date().getFullYear() + 5,
+						yearText: '年',
+						monthText: '月',
+						dayText: '日',
+						doneButton: {
+							text: '确定'
+						},
+						cancelButton: {
+							text: '取消'
+						},
+						slotOrder: ['year', 'month', 'day']
 					}
 				}, {
 					xtype: 'spacer',
@@ -58,7 +67,8 @@ Ext.define('demo.view.FlightSearch', {
 					xtype: 'textfield',
 					name: 'flightNumber',
 					label: '航班号',
-					labelWidth: 100
+					labelWidth: 100,
+					value: '3U8627'
 				}]
 			}, {
 				xtype: 'fieldset',

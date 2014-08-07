@@ -171,7 +171,8 @@ Ext.define('demo.view.GroundServiceTicket', {
     	return this._labelData;
     },
     refresh: function() {
-    	this.down('grid').getStore().load();
+    	var grid = this.down('grid');
+    	grid.getStore().load();
     }
 });
 }());
