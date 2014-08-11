@@ -51,7 +51,7 @@ Ext.define('demo.view.FlightSearch', {
 					cls: 'acms-sheet-spacer'
 				}, {
 					xtype: 'button',
-					width: 100,
+					width: 70,
 					text: '上一天',
 					handler: function() {
 						var dateField = this.getParent().child('datepickerfield');

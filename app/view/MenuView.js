@@ -5,6 +5,8 @@ Ext.define('demo.view.MenuView', {
 	config: {
 		toolbar: {
 			ui: 'dark'
-		}
+		},
+		border: '0 1 0 0',
+    	style: 'border-color: black; border-style: solid;'
 	}
 });

@@ -6,6 +6,10 @@
 	background-color: #eeeeee;
 }
 
+.datalist-basic .content {
+	width: 500px;
+}
+
 .datalist-basic .content .affiliation {
 	color: #9d9d9d;
 	font-size: 14px;

@@ -2,7 +2,8 @@ Ext.define('demo.view.FlightInfomation', {
 	extend: 'Ext.Panel',
 	xtype: 'flightInfomation',
 	requires: [
-		'demo.model.Flight'
+		'demo.model.Flight',
+		'demo.components.FlightInfomationListItem'
     ],
     _store: null,
     _params: null,
@@ -28,6 +29,8 @@ Ext.define('demo.view.FlightInfomation', {
 	        }]
         }, {
             xtype: 'list',
+            //useHeaders: false,
+            defaultType: 'flightInfomationListItem',
             loadingText: '加载中...',
             emptyText: '没有记录',
             scrollable: {
@@ -41,8 +44,8 @@ Ext.define('demo.view.FlightInfomation', {
             }],
             cls: 'datalist-basic',
             itemTpl: '<div class="img" style="background-image: url(./icons/airplane_{action}.ico); float: left;"></div>' +
-            		 '<div class="img" style="background-image: url(./icons/printer.ico); float: right;"></div>' +
-            		 '<div class="img" style="background-image: url(./icons/input_tablet.ico); float: right;"></div>' +
+            		 //'<div class="img" style="background-image: url(./icons/printer.ico); float: right;"></div>' +
+            		 //'<div class="img" style="background-image: url(./icons/input_tablet.ico); float: right;"></div>' +
             		 '<div class="content">' +
 	            		 '<div class="name">{flightNumber}</div>' +
 	            		 '<div class="affiliation">机号: {planeNumber}</div>' +

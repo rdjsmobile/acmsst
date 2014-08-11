@@ -48,7 +48,7 @@ Ext.define('demo.view.GroundServiceTicket', {
 				items: [{
 					xtype: 'panel',
 					layout: 'vbox',
-					width: panelWidth * 0.5,
+					width: panelWidth * 0.3,
 					items: [{
 	        			xtype: 'label',
 	        			id: 'timeLabelId',
@@ -67,7 +67,7 @@ Ext.define('demo.view.GroundServiceTicket', {
 				}, {
 					xtype: 'panel',
 					layout: 'vbox',
-					width: panelWidth * 0.4,
+					width: panelWidth * 0.3,
 					items: [{
 			       		xtype: 'label',
 			       		id: 'flightNumberLabelId',
@@ -79,7 +79,7 @@ Ext.define('demo.view.GroundServiceTicket', {
 				}, {
 					xtype: 'panel',
 					layout: 'vbox',
-					width: panelWidth * 0.1,
+					width: panelWidth * 0.3,
 					items: [{
 			       		xtype: 'label',
 			       		id: 'planeNumberLabelId',
@@ -133,7 +133,7 @@ Ext.define('demo.view.GroundServiceTicket', {
         		xtype: 'button',
         		id: 'backwordButtonId',
         		width: 50,
-        		height: 30,
+        		height: 40,
         		style: 'background-image: url(./icons/backward.ico);background-repeat:no-repeat; background-size:30px; background-position: center;'
         	}, {
         		xtype: 'spacer'
@@ -141,7 +141,7 @@ Ext.define('demo.view.GroundServiceTicket', {
         		xtype: 'button',
         		id: 'saveButtonId',
         		width: 50,
-        		height: 30,
+        		height: 40,
         		style: 'background-image: url(./icons/save.ico);background-repeat:no-repeat; background-size:30px; background-position: center;'
         	}, {
         		xtype: 'spacer'
@@ -149,7 +149,7 @@ Ext.define('demo.view.GroundServiceTicket', {
         		xtype: 'button',
         		id: 'printerButtonId',
         		width: 50,
-        		height: 30,
+        		height: 40,
         		style: 'background-image: url(./icons/printer.ico);background-repeat:no-repeat; background-size:30px; background-position: center;'
         	}]
         }]
