@@ -1,0 +1,28 @@
+.acms-sheet {
+	background-color: #eeeeee;
+}
+
+.acms-sheet-spacer {
+	background-color: #eeeeee;
+}
+
+.datalist-basic .content {
+	width: 500px;
+}
+
+.datalist-basic .content .affiliation {
+	color: #9d9d9d;
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.datalist-basic .x-list-item .img {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}

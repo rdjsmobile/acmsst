@@ -1,0 +1,15 @@
+.datalist-basic .content .affiliation {
+	color: #9d9d9d;
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.x-container .x-form-label {
+	background-color: #9d9d9d;
+}
+
+.x-item-disabled .x-form-label {
+	color: #000000
+}
